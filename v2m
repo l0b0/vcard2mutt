@@ -36,13 +36,13 @@ while ( <> )
 
 	if  (/^FN:(.*)/i) 		# find a name - everything after FN:
 	{
-	s/FN://g;			# lop off the FN: at the beginning
-	s/\s$//g;			# lop any extra blank spaces at the end
-	$realname = $_;			# store it in a variable
+		s/FN://g;			# lop off the FN: at the beginning
+		s/\s$//g;			# lop any extra blank spaces at the end
+		$realname = $_;			# store it in a variable
 
-	s/\s/_/g;			# replace spaces with underscores _
-	$dashname = $_;			# store it in a variable
-	print "alias $dashname $realname ";	#print name but not email address
+		s/\s/_/g;			# replace spaces with underscores _
+		$dashname = $_;			# store it in a variable
+		print "alias $dashname $realname ";	#print name but not email address
 	}
 
 	elsif (/:{1}([^\s()\[\]{}@,]*	
